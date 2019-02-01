@@ -38,12 +38,14 @@
                 android:textAppearance="?android:textAppearanceLarge" />
 
             <Button
+                android:id="@+id/registerBtn_registration"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Register"
                 android:textAppearance="?android:textAppearanceLarge" />
 
             <TextView
+                android:id="@+id/signinTxt_registration"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
