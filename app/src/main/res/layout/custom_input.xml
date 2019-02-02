@@ -11,18 +11,21 @@
         android:orientation="vertical">
 
         <EditText
+            android:id="@+id/title_custom_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Title"
             android:textAppearance="?android:textAppearanceLarge"/>
 
         <EditText
+            android:id="@+id/note_custom_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Note"
             android:textAppearance="?android:textAppearanceLarge"/>
 
         <Button
+            android:id="@+id/saveBtn_custom_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Save"
