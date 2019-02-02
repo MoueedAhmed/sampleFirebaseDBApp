@@ -4,6 +4,8 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +27,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,13 @@ public class HomeActivity extends AppCompatActivity {
         String uId = mUser.getUid();
 
         mDatabase = FirebaseDatabase.getInstance().getReference().child("TaskNote").child(uId);
+
+        recyclerView = findViewById(R.id.recycler_home);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        layoutManager.setStackFromEnd(true);
+        layoutManager.setReverseLayout(true);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(layoutManager);
 
         fabAdd = (FloatingActionButton) findViewById(R.id.addFab_home);
         fabAdd.setOnClickListener(new View.OnClickListener() {
